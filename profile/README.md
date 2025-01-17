@@ -6,7 +6,7 @@
 
 If you have to manage hundreds or thousands of packages, Pulp can help!
 
-![](https://pulpproject.org/images/pulp-workflow-architecture-ha/pulp-101.png)
+![](https://pulpproject.org/pulpcore/docs/assets/pulp-101.png)
 
 * **Ensure stability and continuity:** External content sources can go offline unexpectedly.
 If you want to ensure that you always have what you need, Pulp can help.

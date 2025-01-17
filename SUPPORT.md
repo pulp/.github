@@ -7,8 +7,7 @@ relating to pulpcore or plugins. To participate, put a topic on
 list.
 
 **Bug Triage** - every Tuesday immediately after Open Floor in [pulp-meeting](https://matrix.to/#/#pulp_meeting:matrix.org?via=libera.chat&via=matrix.org) on Matrix . Come and
-participate in real-time. See the [triage process](https://docs.pulpproject.org/bugs-features.html#triage) for
-more details. You can also read through the [triage archives](https://logs.pulpproject.org/pulp-meeting/).
+participate in real-time.
 
 ## Community Forum
 
@@ -28,11 +27,11 @@ We have corresponding Libera.Chat rooms for every Matrix room, so if you use IRC
 
 ## Found a Security Issue?
 
-If you find a security issue with Pulp or would like to share a security concern, see our [Security Disclosures](https://docs.pulpproject.org/pulpcore/bugs-features.html#security-disclosures) section for more information about how you can report this.
+If you find a security issue with Pulp or would like to share a security concern, see our [Security Disclosures](https://pulpproject.org/help/community/get-involved/#reporting) section for more information about how you can report this.
 
 ## Contribute as a Developer
 
-See the [developers guide](https://docs.pulpproject.org/contributing/index.html) for how
+See the [developers guide](https://pulpproject.org/dev/) for how
 to contribute code fixes.
 
 Join the [pulp-dev](https://www.redhat.com/mailman/listinfo/pulp-dev) mailing list for discussion about
