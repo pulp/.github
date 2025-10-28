@@ -25,6 +25,8 @@ Come chat to us on our [community forum](https://discourse.pulpproject.org/) or 
 
 #### Pulp Project Policy on AI Generated Content / AI Assisted Coding
 
+[//]: # (This policy is a copy of https://github.com/pulp/pulp-docs/blob/main/pulpproject.org/help/more/governance/ai_policy.md . They need to be kept in sync.)
+
 We have received questions about the stance of the Pulp Project on AI Generated and AI Assisted contributions to our project.
 Open source software has existed and adapted to an always changing landscape in the world of technology.
 AI Generated/Assisted content is another chapter in that long history.
