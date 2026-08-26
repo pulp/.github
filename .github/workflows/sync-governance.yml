@@ -1,0 +1,55 @@
+name: Sync Governance Files
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Sync governance files
+        run: uv run --script .github/scripts/sync_governance_files.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create pull request
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH_NAME="bot/sync-governance"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH_NAME"
+          git add SECURITY.md CODE_OF_CONDUCT.md CONTRIBUTING.md
+          git commit -m "Sync governance files from pulp/governance ($(date +%Y%m%d))"
+          git push origin "$BRANCH_NAME"
+
+          gh pr create \
+            --title "[BOT] Sync governance files ($(date +%Y%m%d))" \
+            --body "Automated sync of community health files from [pulp/governance](https://github.com/pulp/governance)." \
+            --base main \
+            --head "$BRANCH_NAME"
+
+          gh pr merge "$BRANCH_NAME" --auto --squash
